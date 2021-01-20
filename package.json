@@ -1,14 +1,16 @@
 {
   "name": "gif-search",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple tenor gif search",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Veer",
   "license": "ISC",
+  "repository": "",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0"
   }
 }
