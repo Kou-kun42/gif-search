@@ -1,6 +1,14 @@
 // Require Libraries
 const express = require("express");
 
+// Require tenorjs near the top of the file
+const Tenor = require("tenorjs").client({
+  // Replace with your own key
+  Key: "TENOR_API_KEY", // https://tenor.com/developer/keyregistration
+  Filter: "high", // "off", "low", "medium", "high", not case sensitive
+  Locale: "en_US", // Your locale here, case-sensitivity depends on input
+});
+
 // App Setup
 const app = express();
 
@@ -12,11 +20,9 @@ app.set("view engine", "handlebars");
 
 // Routes
 app.get("/", (req, res) => {
-  // set the url of the gif
-  const gifUrl =
-    "https://media1.tenor.com/images/561c988433b8d71d378c9ccb4b719b6c/tenor.gif?itemid=10058245";
-  // render the hello-gif view, passing the gifUrl into the view to be displayed
-  res.render("hello-gif", { gifUrl });
+  console.log(req.query); // => "{ term: hey" }
+
+  res.render("home");
 });
 
 app.get("/greetings/:name", (req, res) => {
